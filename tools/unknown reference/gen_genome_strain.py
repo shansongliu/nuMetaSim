@@ -208,6 +208,7 @@ def modify_genome(genome, annotation, sdi_propor, sub_base_propor, sub_len_distr
     SDI = ['S', 'D', 'I']
     variation_rate_threshold = 0.5
     if variation_rate > variation_rate_threshold:
+        variation_rate = variation_rate_threshold
         print "The set variation rate is larger than the allowed maximum (0.5), now the program will use 0.5 instead"
     genome_len = len(genome)
     genome = list(genome)
