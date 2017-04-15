@@ -107,7 +107,11 @@ def write_genome_distribution(file_name, geo_distri):
         geo_distri:        list; a list contains each calculated genome's distribution by counting reads 
                         which were mapped to bins in the genome            
     """
-    file_path = '/'.join(file_name.split('/')[:-1]) + '/'
+    file_path = ""
+    if '/' in file_name:
+        file_path = '/'.join(file_name.split('/')[:-1]) + '/'
+    else:
+        file_path = "./"
     file_name = file_path + "distribution.txt"
     with open(file_name, 'w') as f_w:
         for term in geo_distri:

@@ -8,7 +8,11 @@ from optparse import OptionParser
 
 def align_ref_qry(genome_ref, genome_qry):
     cur_work_dir = os.path.abspath(os.curdir)
-    dir_to_change = '/'.join(genome_ref.split('/')[:-1])
+    dir_to_change = ""
+    if '/' in genome_ref:
+        dir_to_change = '/'.join(genome_ref.split('/')[:-1])
+    else:
+        dir_to_change = "./"
     os.chdir(dir_to_change)
     # build reference genome index
     try:
@@ -17,9 +21,14 @@ def align_ref_qry(genome_ref, genome_qry):
         print "Please make sure the required program \"makeblastdb\" is installed in the system path. Program will exit."
         os._exit(1)
     # align query genome to reference genome
-    dir_to_change = '/'.join(genome_qry.split('/')[:-1])
-    os.chdir(dir_to_change)    
-    alignment_file = dir_to_change + "/alignment.out"
+    dir_to_change = ""
+    if '/' in genome_qry:
+        dir_to_change = '/'.join(genome_qry.split('/')[:-1])
+    else:
+        dir_to_change = "./"
+    os.chdir(dir_to_change)
+    dir_to_change = dir_to_change.rstrip('/') + '/'    
+    alignment_file = dir_to_change + "alignment.out"
     outfmt = "6 qseqid sseqid pident length mismatch gapopen gaps qstart qend sstart send qseq sseq evalue bitscore"
     try:
         os.system("blastn -db %s -query %s -out %s -outfmt \"%s\" -evalue 1e-5" % (genome_ref, genome_qry, alignment_file, outfmt))

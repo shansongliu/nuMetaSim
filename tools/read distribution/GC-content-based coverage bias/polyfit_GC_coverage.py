@@ -116,7 +116,11 @@ def GC_coverage_plot(file_name, GC_list, coverage_list, cover_list_fit):
     plt.set_ylabel("Normalized read count")
     plt.set_title("GC content - Normalized read count")
 
-    file_path = '/'.join(file_name.split('/')[:-1]) + '/'
+    file_path = ""
+    if '/' in file_name:
+        file_path = '/'.join(file_name.split('/')[:-1]) + '/'
+    else:
+        file_path = "./"
     pdf_save_path = file_path + "GC_coverage.pdf"
     pdf_save = PdfPages(pdf_save_path)
     pdf_save.savefig()
@@ -129,7 +133,11 @@ def write_polyfit_coef(file_name, polyfit_coef):
         file_name:        str; absolute path of "GC_coverage.txt"
         polyfit_coef:    np.array; polynomial fitting coefficient
     """
-    file_path = '/'.join(file_name.split('/')[:-1]) + '/'
+    file_path = ""
+    if '/' in file_name:
+        file_path = '/'.join(file_name.split('/')[:-1]) + '/'
+    else:
+        file_path = "./"
     file_name = file_path + "polyfit_coefficient.txt"
     with open(file_name, 'w') as f_w:
         f_w.write("#polynomial fitting coefficient")
