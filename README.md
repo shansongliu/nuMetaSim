@@ -36,8 +36,6 @@ nuMetaSim is developed with Python. Both **single-end** and **pair-end** data ge
 
 The author suggests running nuMetaSim in a widely-used Python distribution – [Anaconda](https://www.continuum.io/downloads/), because most of nuMetaSim’s module dependencies are satisfied in Anaconda environment. The only required missing third-party package that you need to install manually is `intervaltree`. It can be downloaded at <https://pypi.python.org/pypi/intervaltree>.
 
-nuMetaSim is free for academic use. If you would like to use it for commercial purposes, please contact <zhangxg@tsinghua.edu.cn>.
-
 
 <h2 id = "2"> Usage </h2>
 
