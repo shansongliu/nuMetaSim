@@ -31,9 +31,9 @@ def get_qual_range(qual_str):
 def get_encoding(guess_min, guess_max, ranges = RANGES):
     """
     Args:
-        guess_min:         int; the minimum quality score of the input fastq file
-        guess_max:        int; the maximum quality score of the input fastq file
-        ranges:            dict; the quality score encoding methods  
+        guess_min:      int; the minimum quality score of the input fastq file
+        guess_max:      int; the maximum quality score of the input fastq file
+        ranges:         dict; the quality score encoding methods  
     """
     valid_encoding = ""
     for encoding, (encode_min, encode_max) in ranges.items():
@@ -44,7 +44,7 @@ def get_encoding(guess_min, guess_max, ranges = RANGES):
 def check_ascii_coding(file_name):
     """
     Args:
-        file_name:         str; fastq file
+        file_name:      str; fastq file
     """
     # count the number of total lines   
     line_count = 0
@@ -74,10 +74,10 @@ def check_ascii_coding(file_name):
 def extract_qual_distri(file_name, encoding, max_read_len):
     """
     Args:
-        file_name:         str; fastq file
-        encoding:        str; the quality score encoding method, which can be searched in the global
+        file_name:      str; fastq file
+        encoding:       str; the quality score encoding method, which can be searched in the global
                         varaiable "RANGES"
-        max_read_len:    int; the maximum read length of the input fastq file 
+        max_read_len:   int; the maximum read length of the input fastq file 
     """
     # calculate the quality score distribution of each position of a read
     line_count = 0
@@ -107,9 +107,9 @@ def extract_qual_distri(file_name, encoding, max_read_len):
 def write_qual_distri(qual_score_distri, encoding, file_path):
     """
     Args:
-        qual_score_dis:    np.array; the quality score distribution calculated by function "extract_qual_distri"
-        encoding:        str; the encoding method of quality score
-        file_path:        str; the absolute path to save the quality score distribution file
+        qual_score_dis: np.array; the quality score distribution calculated by function "extract_qual_distri"
+        encoding:       str; the encoding method of quality score
+        file_path:      str; the absolute path to save the quality score distribution file
     """
     file_path = file_path.rstrip('/') + '/'
     file_name_write = file_path + "quality_score.txt"
