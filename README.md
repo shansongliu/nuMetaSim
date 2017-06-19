@@ -41,7 +41,7 @@ The author suggests running nuMetaSim in a widely-used Python distribution – [
 
 <h3 id = "2.1"> Main scripts </h3>
 
-**Note:**`nuMetaSim_pe.py` usage is nearly the same with `nuMetaSim.py`. It only has one more parameter `-g, "gap_length"`, which controls the insertion length in pair-end simulated data, than `nuMetaSim.py`. So here only `nuMetaSim.py` will be introduced.
+**Note:**`nuMetaSim_pe.py` usage is nearly the same with `nuMetaSim.py`. It only has one more parameter `-g, "gap_length"`, which controls the insertion length in pair-end simulated data, compared with `nuMetaSim.py`. So here only `nuMetaSim.py` will be introduced.
 
 <h4 id = "2.1.1"> Generate fasta data (no sequencing error allowed) </h4>
 
