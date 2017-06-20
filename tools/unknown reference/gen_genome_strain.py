@@ -321,16 +321,6 @@ def main():
     var_seed_flag = opts.var_seed_flag
     random_seed = opts.random_seed
 
-    # genome_variation_file = "/data/ssliu/Simulation/SimExperimentPipe/simMicrobeEnv/genNonuniReads/genome_align/genome_variation.txt"
-    # genome_file = "/data/ssliu/Simulation/SimExperimentPipe/simMicrobeEnv/genNonuniReads/genome_align/Ecoli_strains/Escherichia_coli-GCA_000091005.1.fna"
-    # file_path_write = "/data/ssliu/Simulation/SimExperimentPipe/simMicrobeEnv/genNonuniReads/genome_align/modified_genomes"
-    # mode_flag = 1 
-    # variation_rates = np.array([0.1, 0.2, 0.3, 0.4, 0.5]) # total number of modified bases' rate
-    # genome_num = 10
-    # mean, std = 0.1, 0.1
-    # var_seed_flag = 1
-    # random_seed = 0
-
     if mode_flag == 1:
         variation_rates = generate_variation_rate(genome_num, mean, std)
     # set a global fixed random seed if needed
