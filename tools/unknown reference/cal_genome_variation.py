@@ -42,7 +42,7 @@ def align_ref_qry(genome_ref, genome_qry):
 def read_genome_align_res(file_name):
     """
     Args:
-        file_name:         str; the absolute path of the alignment file between a query genome
+        file_name:      str; the absolute path of the alignment file between a query genome
                         and a reference genome                
     """
     querys, refs = [], []
@@ -58,12 +58,12 @@ def read_genome_align_res(file_name):
 def cal_variation(query, ref, sub_base_dict, sub_length_dict, del_length_dict, ins_base_dict, ins_length_dict):
     """
     Args:
-        query:             str; aligned query sequence
+        query:          str; aligned query sequence
         ref:            str; aligned reference sequence
-        sub_base_dict:    dict; base substitution distribution        
+        sub_base_dict:  dict; base substitution distribution        
         sub_length_dict:dict; substitution length distribution
         del_length_dict:dict; deletion length distribution
-        ins_base_dict:    dict; base insertion distribution
+        ins_base_dict:  dict; base insertion distribution
         ins_length_dict:dict; insertion length distribution
     """
     BASE = "AGCT"
@@ -137,12 +137,12 @@ def cal_variation(query, ref, sub_base_dict, sub_length_dict, del_length_dict, i
 def write_genome_variation(sub_base_dict, sub_length_dict, del_length_dict, ins_base_dict, ins_length_dict, file_path):
     """
     Args:
-        sub_base_dict:    dict; base substitution distribution        
+        sub_base_dict:  dict; base substitution distribution        
         sub_length_dict:dict; substitution length distribution
         del_length_dict:dict; deletion length distribution
-        ins_base_dict:    dict; base insertion distribution
+        ins_base_dict:  dict; base insertion distribution
         ins_length_dict:dict; insertion length distribution
-        file_path:        str; the absolute path write the genome variation
+        file_path:      str; the absolute path write the genome variation
     """
     # smoothing (use very small value to act as a pseudo count)
     pseudo_count = 1e-6
@@ -289,9 +289,6 @@ def main():
     genome_ref = opts.ref_genome_path
     genome_qry = opts.qry_genome_path
     file_path = opts.genome_variation_folder
-    # genome_ref = "/home/ssliu/test/test_python/Ecoli_index/Escherichia_coli-GCA_000091005.1.fna"
-    # genome_qry = "/home/ssliu/test/test_python/Escherichia_coli-GCA_000350185.1.fna"
-    # file_path = "/home/ssliu/test/test_python"
     alignment_file = align_ref_qry(genome_ref, genome_qry)
     querys, refs = read_genome_align_res(alignment_file)
     for query, ref in zip(querys, refs):
