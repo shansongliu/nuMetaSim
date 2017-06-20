@@ -140,10 +140,6 @@ def main():
     genome_path = opts.ref_genome_folder
     bin_size = opts.bin_size
 
-    # GC_coverage_path = "/data/ssliu/Simulation/SimExperimentPipe/simMicrobeEnv/genNonuniReads/real_seq_data/polyfit_coefficient.txt"
-    # genome_path = "/data/ssliu/Simulation/SimExperimentPipe/simMicrobeEnv/genNonuniReads/microbes"
-    # bin_size = 2000
-
     multiprocess_core = multiprocessing.cpu_count() / 2    # defalut processing core number (half of the total cpu cores)
 
     # calculate distribution of each genome by GC content
