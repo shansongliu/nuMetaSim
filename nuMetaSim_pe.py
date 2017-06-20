@@ -13,6 +13,7 @@ visible_accurate_rate = np.array([])    # accurate rate before transforming sequ
 
 
 def argvParse():
+    # parse input parameters
     usageReminder = ("usage: python NonSIM.py [--index] index_file [--propor] propor_table\n"
                      "[-F] file_name_write [-n] read_number [-L] read_length [-g] gap_length\n"
                      "[-v] var_seed_flag [-r] random_seed [-b] bin_size\n"
@@ -115,6 +116,7 @@ def argvParse():
     return opts
 
 def argvCheck(opts):
+    # check input parameters
 
     def check_index(file_name):
         genome_names = {}
@@ -129,6 +131,7 @@ def argvCheck(opts):
         return genome_names
 
     def check_propor_table(file_name, genome_names):
+        # check microbial proportion table
         name_not_included = []
         count = 0
         propor_sum = 0.0
@@ -162,6 +165,7 @@ def argvCheck(opts):
             os._exit(1)
 
     def check_distri_table(file_name, genome_names):
+        # check genome distribution table
         name_not_included = []
         count = 0
         try:
@@ -187,6 +191,7 @@ def argvCheck(opts):
             os._exit(1)
 
     def check_humanOrUnknown_index(file_name):
+        # check human (or unknown) genome index
         genome_names = {}
         try:
             with open(file_name) as f_r:
@@ -199,6 +204,7 @@ def argvCheck(opts):
         return genome_names
 
     def check_humanOrUnknown_propor_table(file_name, genome_names):
+        # check human (or unknown) proportion table
         name_not_included = []
         count = 0
         propor_sum = 0.0
@@ -477,6 +483,7 @@ def read_quality_score_distribution(file_name, error_adjust_flag = 1, error_rate
             os.system("pip install intervaltree")
 
     def cal_expected_err_prob(PROB_RANGE, qual_distri):
+        # calculate the expected error probability of each base
         qual_distri_temp = [0] * len(qual_distri)
         qual_distri_temp[0] = qual_distri[0]
         for i in xrange(1, len(qual_distri)):
