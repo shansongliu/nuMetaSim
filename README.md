@@ -3,7 +3,7 @@
 
 * [Introduction](#1)
 * [Usage](#2)
-	* [Main scripts](#2.1)
+	* [Main usage with examples](#2.1)
 		* [Generate fasta data (no sequencing error allowed)](#2.1.1)
 		* [Generate fastq data with sequencing error based on a quality score profile](#2.1.2)
 		* [Generate fastq data with sequencing error and a specific sequencing error rate](#2.1.3)
@@ -213,7 +213,7 @@ The output file is named as `quality_score.txt`, storing in `output_folder`.
 
 <h5 id = "2.2.4.2"> change_read_header.py </h5>
 
-This tool script is needed when the benchmarked software adopted by the researcher needs a distinct header in each read header information line. 
+This tool script is needed when the benchmarked software adopted by the researcher needs a distinct header in each read's header information line. 
 
 	python change_read_header.py -i input_sample_file -o output_file_name -l fasta_fastq_flag
 
