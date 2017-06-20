@@ -141,9 +141,6 @@ def main():
     (opts, args) = parser.parse_args()
     file_name = opts.input_real_seq_data
     file_path = opts.output_qual_distri_dir
-#    file_name = "/data/ssliu/Simulation/SimExperimentPipe/simMicrobeEnv/genNonuniReads/real_seq_data/DLF001.pair.1.fq"
-#    file_path = "/data/ssliu/Simulation/SimExperimentPipe/simMicrobeEnv/genNonuniReads/real_seq_data/"
-
     encoding, max_read_len = check_ascii_coding(file_name)
     qual_score_tot_distri = extract_qual_distri(file_name, encoding, max_read_len)
     write_qual_distri(qual_score_tot_distri, encoding, file_path)
