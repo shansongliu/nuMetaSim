@@ -39,7 +39,7 @@ The author suggests running nuMetaSim in a widely-used Python distribution – [
 
 <h2 id = "2"> Usage </h2>
 
-<h3 id = "2.1"> Main scripts </h3>
+<h3 id = "2.1"> Main usage with examples </h3>
 
 **Note:**`nuMetaSim_pe.py` usage is nearly the same with `nuMetaSim.py`. It only has one more parameter `-g, "gap_length"`, which controls the insertion length in pair-end simulated data, compared with `nuMetaSim.py`. So here only `nuMetaSim.py` will be introduced.
 
