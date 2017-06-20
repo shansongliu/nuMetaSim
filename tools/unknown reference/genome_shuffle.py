@@ -56,7 +56,6 @@ def main():
     (opts, args) = parser.parse_args()
 
     genome_path = opts.ref_genome_folder
-    # genome_path = "/data/ssliu/Simulation/SimExperimentPipe/simMicrobeEnv/genNonuniReads/gen_unknown_reads"
     genome_paths = list_genome(genome_path)
     for geo_path in genome_paths:
         annotation, genome, start_end = read_genome(geo_path)
